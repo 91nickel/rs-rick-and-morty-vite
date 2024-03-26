@@ -1,20 +1,23 @@
 import React from 'react'
-import { ToastContainer } from "react-toastify"
+import { MantineProvider } from '@mantine/core'
+import { BrowserRouter } from 'react-router-dom'
 
 import AuthProvider from './context/AuthProvider'
 import AppRouter from './route/AppRouter'
 
-import 'App.css'
-import 'react-toastify/dist/ReactToastify.css'
+import '@mantine/core/styles.css'
+import 'style/index.scss'
+
 
 function App() {
     return (
-        <div className="container">
-            <AuthProvider>
-                <AppRouter/>
-            </AuthProvider>
-            <ToastContainer/>
-        </div>
+        <MantineProvider>
+            <BrowserRouter>
+                <AuthProvider>
+                    <AppRouter/>
+                </AuthProvider>
+            </BrowserRouter>
+        </MantineProvider>
     )
 }
 
