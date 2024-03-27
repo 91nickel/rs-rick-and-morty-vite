@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react'
-import { IFormValues as IAuthFormData } from "component/SignInForm"
+import { IFormValues as IAuthFormData } from "components/SignInForm"
 
 export const AuthContext: React.Context<any> = createContext({})
 

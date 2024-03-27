@@ -1,9 +1,9 @@
-import axios from 'axios'
-import { toast } from "react-toastify"
+import axios, { CreateAxiosDefaults } from 'axios'
+import { NotificationData, notifications } from '@mantine/notifications'
 
 const http = axios.create({
     baseURL: 'https://rickandmortyapi.com/api/',
-})
+} as CreateAxiosDefaults)
 
 http.interceptors.request.use(
     async function (config: any) {
@@ -27,7 +27,12 @@ http.interceptors.response.use(
         if (!expectedErrors) {
             console.error(error)
             console.error(error?.response?.data?.error)
-            toast.error('Something went wrong. Try later...')
+
+            notifications.show({
+                message: 'HTTP Error',
+                title: 'Something went wrong. Try later...',
+                color: 'red',
+            } as NotificationData)
         }
         return Promise.reject(error)
     })
