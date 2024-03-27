@@ -1,9 +1,9 @@
-import axios, { CreateAxiosDefaults } from 'axios'
+import axios from 'axios'
 import { NotificationData, notifications } from '@mantine/notifications'
 
 const http = axios.create({
     baseURL: 'https://rickandmortyapi.com/api/',
-} as CreateAxiosDefaults)
+})
 
 http.interceptors.request.use(
     async function (config: any) {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useLocation, useNavigate, Link } from 'react-router-dom'
+import {Button, Box} from '@mantine/core'
 
 import { EntityType } from 'type/list'
 import { ICharacter, IEpisode, ILocation } from 'type/service/mock'
@@ -52,14 +53,18 @@ export default function Item({type}: IProps) {
 
     return (
         <>
-            <div className="col-12 mb-3">
-                <Link className="btn btn-primary" to=".."> &lt; Back</Link>
-            </div>
-            <div className="col-md-6 col-12">
+            <Box>
+                <Button variant="filled">
+                    <Link className="btn btn-primary" to=".." style={{color: '#FFF'}}>
+                        &lt; Back
+                    </Link>
+                </Button>
+            </Box>
+            <Box>
                 <ErrorBoundary>
                     <DynamicComponent element="ItemCard" {...item} />
                 </ErrorBoundary>
-            </div>
+            </Box>
         </>
     )
 }
