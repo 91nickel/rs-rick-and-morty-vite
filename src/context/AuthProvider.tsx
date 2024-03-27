@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react'
-import { IFormValues as IAuthFormData } from "components/SignInForm"
+import { IFormValues as IAuthFormData } from "@/components/SignInForm"
 
 export const AuthContext: React.Context<any> = createContext({})
 
@@ -10,13 +10,13 @@ export default function AuthProvider({children}: any) {
     const value = {
         user,
         signIn: (authFormData: IAuthFormData, callback: Function) => {
-            console.log('signIn()', authFormData)
+            // console.log('signIn()', authFormData)
             setUser(authFormData.login)
             localStorage.setItem('login', authFormData.login)
             callback()
         },
         signOut: (callback: Function) => {
-            console.log('signOut()')
+            // console.log('signOut()')
             setUser(null)
             localStorage.removeItem('login')
             callback()

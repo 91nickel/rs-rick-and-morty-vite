@@ -1,11 +1,15 @@
-import React, { useRef, useState } from 'react'
-import { useForm, UseFormReturnType } from '@mantine/form'
+import React from 'react'
 import { Box, Button, PasswordInput, TextInput } from '@mantine/core'
+import { useForm } from '@mantine/form'
 
 enum FieldNames {
     login = 'login',
     password = 'password',
 }
+
+export type IFormValues = {
+    [key in FieldNames]: string;
+};
 
 interface IProps {
     onSubmit: Function

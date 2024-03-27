@@ -1,12 +1,12 @@
 import React, { FunctionComponent, lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
-import Page from 'pages'
-import Layout from 'layouts'
+import Page from '@/pages'
+import Layout from '@/layouts'
 
-import PrivateRoute from 'components/hoc/PrivateRoute'
+import PrivateRoute from '@/components/hoc/PrivateRoute'
 
-import { EntityType } from 'type/list'
+import { EntityType } from '@/type/list'
 
 const AppRouter: FunctionComponent = () => {
     return (

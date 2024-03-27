@@ -2,19 +2,19 @@ import React, { useEffect, useState } from 'react'
 import { useParams, useLocation, useNavigate, Link } from 'react-router-dom'
 import {Button, Box} from '@mantine/core'
 
-import { EntityType } from 'type/list'
-import { ICharacter, IEpisode, ILocation } from 'type/service/mock'
-import ICharacterResponse from 'type/list/character'
-import ILocationResponse from 'type/list/location'
-import IEpisodeResponse from 'type/list/episode'
+import { EntityType } from '@/type/list'
+import { ICharacter, IEpisode, ILocation } from '@/type/service/mock'
+import ICharacterResponse from '@/type/list/character'
+import ILocationResponse from '@/type/list/location'
+import IEpisodeResponse from '@/type/list/episode'
 
-import Layout from 'layouts'
+import Layout from '@/layouts'
 
-import DynamicComponent from 'components/hoc/DynamicComponent'
-import ErrorBoundary from 'components/hoc/ErrorBoundary'
+import DynamicComponent from '@/components/hoc/DynamicComponent'
+import ErrorBoundary from '@/components/hoc/ErrorBoundary'
 
-import service from 'service/http.service'
-import normalizeEntity from 'util/normalizeEntity'
+import service from '@/service/http.service'
+import normalizeEntity from '@/util/normalizeEntity'
 
 interface IProps {
     type: EntityType

@@ -1,12 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
-import service from 'service/http.service'
+import service from '@/service/http.service'
 
-import ICharacterResponse from 'type/list/character'
-import ILocationResponse from 'type/list/location'
-import IEpisodeResponse from 'type/list/episode'
-
-import { Entity, EntityResponse, EntityType } from 'type/list'
-import normalizeEntity from 'util/normalizeEntity'
+import { Entity, EntityResponse, EntityType } from '@/type/list'
+import normalizeEntity from '@/util/normalizeEntity'
 
 interface IResponseData {
     info: {

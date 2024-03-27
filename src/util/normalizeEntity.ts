@@ -1,8 +1,7 @@
-import { Entity, EntityResponse, EntityType } from 'type/list'
-import ICharacterResponse from 'type/list/character'
-import { ICharacter, IEpisode, ILocation } from 'type/list'
-import ILocationResponse from 'type/list/location'
-import IEpisodeResponse from 'type/list/episode'
+import { Entity, EntityResponse, EntityType, ICharacter, IEpisode, ILocation } from '@/type/list'
+import ICharacterResponse from '@/type/list/character'
+import ILocationResponse from '@/type/list/location'
+import IEpisodeResponse from '@/type/list/episode'
 
 export default function normalizeEntity(type: EntityType, responseObject: EntityResponse): Entity {
     if (type === EntityType.character) {

@@ -3,14 +3,14 @@ import { useSearchParams } from 'react-router-dom'
 import { SimpleGrid, Button } from '@mantine/core'
 import _ from 'lodash'
 
-import Layout from 'layouts'
-import ErrorBoundary from 'components/hoc/ErrorBoundary'
-import ItemCard from 'components/ItemCard'
-import Preloader from 'components/Preloader'
+import Layout from '@/layouts'
+import ErrorBoundary from '@/components/hoc/ErrorBoundary'
+import ItemCard from '@/components/ItemCard'
+import Preloader from '@/components/Preloader'
 
-import useList from 'hooks/useList'
+import useList from '@/hooks/useList'
 
-import { EntityType, ICharacter, IEpisode, ILocation } from 'type/list'
+import { EntityType, ICharacter, IEpisode, ILocation } from '@/type/list'
 
 interface IListProps {
     type: EntityType

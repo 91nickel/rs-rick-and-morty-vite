@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { NotificationData, notifications } from '@mantine/notifications'
+import { notifications } from '@mantine/notifications'
 
 const http = axios.create({
     baseURL: 'https://rickandmortyapi.com/api/',
@@ -32,7 +32,7 @@ http.interceptors.response.use(
                 message: 'HTTP Error',
                 title: 'Something went wrong. Try later...',
                 color: 'red',
-            } as NotificationData)
+            })
         }
         return Promise.reject(error)
     })

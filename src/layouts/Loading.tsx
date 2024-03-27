@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container } from '@mantine/core'
-import Preloader from 'components/Preloader'
+import Preloader from '@/components/Preloader'
 
 function Loading () {
     return (

@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Button } from '@mantine/core'
-import { useAuth } from 'hooks/useAuth'
+import { useAuth } from '@/hooks/useAuth'
 
 const AuthStatus: FunctionComponent = (props) => {
     const auth = useAuth()

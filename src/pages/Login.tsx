@@ -1,17 +1,12 @@
-import React, { FormEvent, FunctionComponent } from 'react'
+import React, { FunctionComponent } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { Container, Group, Center } from '@mantine/core'
+import { Container, Center } from '@mantine/core'
 
-import { useAuth } from 'hooks/useAuth'
-import ErrorBoundary from 'components/hoc/ErrorBoundary'
-import SignInForm, { IFormValues } from 'components/SignInForm'
+import { useAuth } from '@/hooks/useAuth'
+import ErrorBoundary from '@/components/hoc/ErrorBoundary'
+import SignInForm, { IFormValues } from '@/components/SignInForm'
 
-interface OwnProps {
-}
-
-type Props = OwnProps;
-
-const Login: FunctionComponent<Props> = (props) => {
+const Login: FunctionComponent = () => {
     const auth = useAuth()
     const navigate = useNavigate()
     const location = useLocation()

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation, NavLink } from 'react-router-dom'
-import AuthStatus from './AuthStatus'
 import { Grid, NavLink as MantineNavLink } from '@mantine/core'
+import AuthStatus from './AuthStatus'
 
 const navItems = [
     {name: 'Rick & Morty', href: '/'},

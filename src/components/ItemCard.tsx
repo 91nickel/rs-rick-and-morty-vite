@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Card, Image, Group, List } from '@mantine/core'
-import { ICharacter, IEpisode, ILocation } from 'type/service/mock'
+import { ICharacter, IEpisode, ILocation } from '@/type/service/mock'
 
 type EntityKey = keyof (ICharacter | ILocation | IEpisode)
 

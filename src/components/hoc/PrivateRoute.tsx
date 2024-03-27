@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
-import { useAuth } from 'hooks/useAuth'
 import { Navigate, useLocation, Outlet } from 'react-router-dom'
+import { useAuth } from '@/hooks/useAuth'
 
 const PrivateRoute: FunctionComponent = (props) => {
     const auth = useAuth()
