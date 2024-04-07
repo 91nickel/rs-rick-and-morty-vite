@@ -1,4 +1,3 @@
-import React from 'react'
 import { Container, Center } from '@mantine/core'
 
 function Error({width = 50, height = 50}) {

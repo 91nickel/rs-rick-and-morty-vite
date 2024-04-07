@@ -1,4 +1,4 @@
-import React, { FunctionComponent, lazy } from 'react'
+import { FunctionComponent } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 import Page from '@/pages'

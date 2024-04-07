@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react'
+import { useCallback, useRef } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { SimpleGrid, Button } from '@mantine/core'
 import _ from 'lodash'
@@ -10,13 +10,13 @@ import Preloader from '@/components/Preloader'
 
 import useList from '@/hooks/useList'
 
-import { EntityType, ICharacter, IEpisode, ILocation } from '@/type/list'
+import { EntityType } from '@/type/list'
 
 interface IListProps {
     type: EntityType
 }
 
-type Entity = ICharacter | ILocation | IEpisode
+// type Entity = ICharacter | ILocation | IEpisode
 
 enum Sorts {
     'created' = 'created',

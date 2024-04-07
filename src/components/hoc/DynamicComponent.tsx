@@ -1,4 +1,4 @@
-import React, { lazy, FunctionComponent, Suspense } from 'react'
+import { lazy, FunctionComponent, Suspense } from 'react'
 import Layout from '@/layouts'
 
 interface OwnProps {
