@@ -22,5 +22,6 @@ module.exports = {
         'no-extra-boolean-cast': 'off',
         'comma-dangle': 'off',
         // 'no-unused-vars': 0,
+        '@typescript-eslint/no-unused-vars': 0
     },
 }

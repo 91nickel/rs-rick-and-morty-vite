@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { useParams, useLocation, useNavigate, Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import {Button, Box} from '@mantine/core'
 
 import { EntityType } from '@/type/list'
@@ -28,7 +28,7 @@ export default function Item({type}: IProps) {
     const [isLoading, setIsLoading] = useState(true)
     const [item, setItem] = useState({} as Entity)
 
-    const location = useLocation()
+    // const location = useLocation()
     const navigate = useNavigate()
 
     useEffect(() => {

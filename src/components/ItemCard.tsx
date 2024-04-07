@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { Card, Image, Group, List } from '@mantine/core'
 import { ICharacter, IEpisode, ILocation } from '@/type/service/mock'
@@ -24,10 +23,9 @@ export default function ItemCard(props: ICharacter | ILocation | IEpisode) {
             </Card.Section>
             <Card.Section>
                 <Group mt="xs" mb="xs">
-                    <Link
-                        to={props.id.toString()}
-                        label={<h3>{props.name}</h3>}
-                    />
+                    <Link to={props.id.toString()}>
+                        <h3>{props.name}</h3>
+                    </Link>
                 </Group>
                 <List listStyleType="none" withPadding={true}>
                     {
