@@ -39,7 +39,7 @@ const SignInForm = ({onSubmit}: IProps) => {
         }
     )
 
-    function handleChange(name: FieldNames, value: any) {
+    function handleChange(name: FieldNames, value: string) {
         // console.log('handleChange', name, value)
         form.setValues({[name]: value})
         form.validate()
