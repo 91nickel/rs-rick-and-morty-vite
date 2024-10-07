@@ -1,0 +1,1 @@
+import{j as s,Y as t}from"./index-CRr02VuG.js";function i({h1:r}){return s.jsxs(s.Fragment,{children:[s.jsx("div",{children:s.jsx("h1",{children:r})}),s.jsx("div",{children:s.jsx(t,{})})]})}export{i as default};
