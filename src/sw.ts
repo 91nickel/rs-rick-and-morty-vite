@@ -1,3 +1,10 @@
+/// <reference lib="webworker" />
+import { precacheAndRoute } from 'workbox-precaching'
+
+declare const self: Window & ServiceWorkerGlobalScope
+
+precacheAndRoute(self.__WB_MANIFEST)
+
 const staticCacheName = 'static-v1'
 const dynamicCacheName = 'dynamic-v1'
 const ASSETS = [
@@ -26,13 +33,16 @@ self.addEventListener('activate', async event => {
     await Promise.all(
         cachesKeysArr
             .filter(key => key !== staticCacheName && key !== dynamicCacheName)
-            .map(key => caches.delete(key))
+            .map(key => caches.delete(key)),
     )
 })
 
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', async (event: FetchEvent) => {
     console.log('fetch', event)
-    event.respondWith(cacheFirst(event.request))
+    const response = await cacheFirst(event.request)
+    if (response) {
+        event.respondWith(response)
+    }
     // event.respondWith(
     //     caches.match(event.request).then(cacheRes => {
     //         return cacheRes || fetch(event.request).then(response => {
@@ -46,12 +56,13 @@ self.addEventListener('fetch', event => {
     // )
 })
 
-async function cacheFirst(request) {
+async function cacheFirst(request: Request) {
     const cached = await caches.match(request)
     // console.log('####: cached', cached)
     try {
         return cached
-            ?? await fetch(request).then(response => {
+            ?? await fetch(request).then((response: Response) => {
+                console.log(response)
                 return networkFirst(request)
             })
     } catch (e) {
@@ -60,7 +71,7 @@ async function cacheFirst(request) {
     }
 }
 
-async function networkFirst (request) {
+async function networkFirst(request: Request) {
     const cache = await caches.open(dynamicCacheName)
     try {
         const response = await fetch(request)

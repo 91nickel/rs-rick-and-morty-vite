@@ -37,26 +37,26 @@ const List = ({type}: IListProps) => {
     const observer: React.MutableRefObject<undefined | IntersectionObserver> = useRef()
 
     const lastNodeRef = useCallback((node: any) => {
-        console.log('useCallback', type, node)
+        // console.log('useCallback', type, node)
         if (isLoading) {
-            console.log('#### Loading. Do nothing...')
+            // console.log('#### Loading. Do nothing...')
             return
         }
 
         if (observer.current) {
-            console.log('#### Disconnect observer')
+            // console.log('#### Disconnect observer')
             observer.current.disconnect()
         }
 
         observer.current = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
-                console.log('#### VISIBLE:', entries[0])
+                // console.log('#### VISIBLE:', entries[0])
                 next()
             }
         })
 
         if (node) {
-            console.log('#### setting observer')
+            // console.log('#### setting observer')
             observer.current.observe(node)
         }
 
