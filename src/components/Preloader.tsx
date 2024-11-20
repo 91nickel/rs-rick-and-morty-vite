@@ -1,4 +1,3 @@
-import React from 'react'
 import { Group, Loader } from '@mantine/core'
 
 function Preloader() {

@@ -1,4 +1,3 @@
-import React from 'react'
 import { useLocation, NavLink } from 'react-router-dom'
 import { Grid, NavLink as MantineNavLink } from '@mantine/core'
 import AuthStatus from './AuthStatus'
@@ -14,22 +13,22 @@ export default function Nav() {
 
     const location = useLocation()
 
-    function getStyle({isActive}: { isActive: boolean }) {
-        // console.log(isActive)
-        return {}
-    }
+    // function getStyle({isActive}: { isActive: boolean }) {
+    //     // console.log(isActive)
+    //     return {}
+    // }
 
-    function getClassName({isActive}: { isActive: boolean }) {
-        // console.log(isActive)
-        return 'nav-link'
-    }
+    // function getClassName({isActive}: { isActive: boolean }) {
+    //     // console.log(isActive)
+    //     return 'nav-link'
+    // }
+    //
+    // function getInnerText(isActive: boolean, name: string) {
+    //     // console.log(isActive)
+    //     return name
+    // }
 
-    function getInnerText(isActive: boolean, name: string) {
-        // console.log(isActive)
-        return name
-    }
-
-    function isActive(item) {
+    function isActive(item: any) {
         return item.href === location.pathname
     }
 

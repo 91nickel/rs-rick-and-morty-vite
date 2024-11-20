@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Container, Center } from '@mantine/core'
 

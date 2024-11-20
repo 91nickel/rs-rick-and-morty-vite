@@ -1,6 +1,6 @@
-import React from 'react'
 import { Box, Button, PasswordInput, TextInput } from '@mantine/core'
 import { useForm } from '@mantine/form'
+import { FormEvent } from 'react'
 
 enum FieldNames {
     login = 'login',
@@ -40,7 +40,7 @@ const SignInForm = ({onSubmit}: IProps) => {
         }
     )
 
-    function handleChange(name: FieldNames, value) {
+    function handleChange(name: FieldNames, value: FormEvent<HTMLInputElement>) {
         // console.log('handleChange', name, value)
         form.setValues({[name]: value})
         form.validate()
@@ -67,7 +67,7 @@ const SignInForm = ({onSubmit}: IProps) => {
                 required={true}
                 error={form.errors[FieldNames.login] || ''}
                 onInput={value => handleChange(FieldNames.login, value)}
-                onChange={value => handleChange(FieldNames.login, value)}
+                // onChange={value => handleChange(FieldNames.login, value)}
                 {...form.getInputProps(FieldNames.login)}
             />
             <PasswordInput
@@ -77,7 +77,7 @@ const SignInForm = ({onSubmit}: IProps) => {
                 required={true}
                 error={form.errors[FieldNames.password] || ''}
                 onInput={value => handleChange(FieldNames.password, value)}
-                onChange={value => handleChange(FieldNames.password, value)}
+                // onChange={value => handleChange(FieldNames.password, value)}
                 {...form.getInputProps(FieldNames.password)}
             />
             <Button type="submit" variant="filled">Login</Button>

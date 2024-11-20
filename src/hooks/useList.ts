@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import service from '@/service/http.service'
 
 import { Entity, EntityResponse, EntityType } from '@/type/list'
